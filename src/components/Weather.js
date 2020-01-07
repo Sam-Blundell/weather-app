@@ -31,7 +31,7 @@ class Weather extends React.Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <Forecast weathers={this.state.weathers} />
+        <Forecast weathers={this.state.weathers} area={this.state.placeName} />
       </div>
     );
   }
