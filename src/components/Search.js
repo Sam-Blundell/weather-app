@@ -1,12 +1,16 @@
-import React from 'react';
+import React from "react";
 
-const Search = () => {
+const Search = props => {
   return (
-    <form action="">
-      <input type="text" placeholder="city name" />
-      <button>Search</button>
+    <form onSubmit={props.handleSubmit}>
+      <input
+        type="text"
+        placeholder="city name"
+        onChange={props.handleChange}
+      />
+      <button type="submit">Search</button>
     </form>
-  )
-}
+  );
+};
 
 export default Search;
