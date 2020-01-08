@@ -1,14 +1,18 @@
-import React from 'react';
+import React from "react";
+import "../Forecast.css";
 
-const Forecast = (props) => {
-  console.log(props.weathers)
+const Forecast = props => {
   return (
-    <div>
-      <ul>
+    <div className='weatherGrid'>
+      
         {props.weathers.map(weather => {
-          return <li key={weather.dt}>at {weather.dt_txt} it will be {weather.weather[0].description} in {props.area}</li>
+          return (
+            <li className='forecastTime' key={weather.dt}>
+             {weather.weather[0].description} 
+            </li>
+          );
         })}
-      </ul>
+      
     </div>
   );
 };

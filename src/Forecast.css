@@ -1,0 +1,19 @@
+.weatherGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  margin: 15px;
+}
+
+.forecastTime {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  background-color: aquamarine;
+  height: 70px;
+  width: 70px;
+  margin: auto; 
+
+}
+
