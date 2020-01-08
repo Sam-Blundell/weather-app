@@ -1,6 +1,7 @@
 import React from "react";
 import Search from "./Search";
 import Forecast from "./Forecast";
+import apiKey from './../key';
 
 class Weather extends React.Component {
   state = {
@@ -13,10 +14,20 @@ class Weather extends React.Component {
     this.setState({ placeName: value });
   };
 
+  componentDidMount() {
+    fetch(
+      `http://api.openweathermap.org/data/2.5/forecast?q=manchester,uk&APPID=${apiKey}`
+    )
+      .then(response => {
+        return response.json();
+      })
+      .then(body => this.setState({ weathers: body.list }));
+  }
+
   handleSubmit = event => {
     event.preventDefault();
     fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.placeName},uk&APPID=b13ceb6b29996a9c3f2ef083f5778d90`
+      `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.placeName},uk&APPID=${apiKey}`
     )
       .then(response => {
         return response.json();
