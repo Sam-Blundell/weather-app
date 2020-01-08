@@ -10,17 +10,7 @@ class Weather extends React.Component {
   state = {
     placeName: "",
     weathers: [],
-    city: "",
-    times: [
-      "03:00",
-      "06:00",
-      "09:00",
-      "12:00",
-      "15:00",
-      "18:00",
-      "21:00",
-      "00:00"
-    ]
+    city: ""
   };
 
   handleChange = event => {
@@ -49,6 +39,7 @@ class Weather extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <div id="weatherBox">
         <Search
